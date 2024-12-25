@@ -31,9 +31,9 @@ Android开发中，最重要的一项技能便是NDK开发，它涉及到JNI,C,C
 **2. NDK是什么?** NDK(Native Development Kit)
 Android NDK 是一组允许您将 C 或 C++（“原生代码”）嵌入到 Android 应用中的工具，NDK描述的是工具集。 能够在 Android 应用中使用原生代码对于想执行以下一项或多项操作的开发者特别有用：
 
-*   在平台之间移植其应用。
-*   重复使用现有库，或者提供其自己的库供重复使用。
-*   在某些情况下提高性能，特别是像游戏这种计算密集型应用。
+* 在平台之间移植其应用。
+* 重复使用现有库，或者提供其自己的库供重复使用。
+* 在某些情况下提高性能，特别是像游戏这种计算密集型应用。
 
 **3. JNI方法静态注册：**
 JNI函数名格式（需将”.”改为”—”）：
@@ -41,10 +41,10 @@ Java\_ + 包名（com.example.auto.jnitest）+ 类名(MainActivity) + 函数名(
 
 静态方法的缺点：
 
-*   要求JNI函数的名字必须遵循JNI规范的命名格式；
-*   名字冗长，容易出错；
-*   初次调用会根据函数名去搜索JNI中对应的函数，会影响执行效率；
-*   需要编译所有声明了native函数的Java类，每个所生成的class文件都要用javah工具生成一个头文件；
+* 要求JNI函数的名字必须遵循JNI规范的命名格式；
+* 名字冗长，容易出错；
+* 初次调用会根据函数名去搜索JNI中对应的函数，会影响执行效率；
+* 需要编译所有声明了native函数的Java类，每个所生成的class文件都要用javah工具生成一个头文件；
 
 **4. JNI方法动态注册：**
 Java与JNI通过JNINativeMethod的结构来建立函数映射表，它在jni.h头文件中定义，其结构内容如下：
@@ -61,7 +61,7 @@ Java与JNI通过JNINativeMethod的结构来建立函数映射表，它在jni.h�
 **5. JNI的基础数据类型对照表：**
 
 | Java类型         | JNI类型    | 描述     |
-| -------------- | -------- | ------ |
+|----------------|----------|--------|
 | boolean(布尔型)   | jboolean | 无符号8位  |
 | byte(字节型)      | jbyte    | 有符号8位  |
 | char(字符型)      | jchar    | 无符号16位 |
@@ -74,7 +74,7 @@ Java与JNI通过JNINativeMethod的结构来建立函数映射表，它在jni.h�
 **6. JNI引用数据类型对照表:**
 
 | Java引用类型            | JNI类型         | Java引用类型   | JNI类型        |
-| ------------------- | ------------- | ---------- | ------------ |
+|---------------------|---------------|------------|--------------|
 | All objects         | jobject       | char\[ ]   | jcharArray   |
 | java.lang.Class     | jclass        | short\[ ]  | jshortArray  |
 | java.lang.String    | jstring       | int\[]     | jintArray    |
@@ -86,7 +86,7 @@ Java与JNI通过JNINativeMethod的结构来建立函数映射表，它在jni.h�
 **7. JNI函数签名信息**
 由于Java支持函数重载，因此仅仅根据函数名是没法找到对应的JNI函数。为了解决这个问题，JNI将参数类型和返回值类型作为函数的签名信息。
 
-JNI规范定义的函数签名信息格式：  **(参数1类型字符…)返回值类型字符**
+JNI规范定义的函数签名信息格式：**(参数1类型字符…)返回值类型字符**
 
 函数签名例子:
 
@@ -95,7 +95,7 @@ JNI规范定义的函数签名信息格式：  **(参数1类型字符…)返回
 JNI常用的数据类型及对应字符对照表:
 
 | Java类型    | 字符                                           |
-| --------- | -------------------------------------------- |
+|-----------|----------------------------------------------|
 | void      | V                                            |
 | boolean   | Z (容易误写成B)                                   |
 | int       | I                                            |
@@ -111,8 +111,8 @@ JNI常用的数据类型及对应字符对照表:
 
 **8. JNIEnv的介绍**
 
-1.  JNIEnv概念 : JNIEnv是一个线程相关的结构体, 该结构体代表了 Java 在本线程的运行环境。通过JNIEnv可以调用到一系列JNI系统函数。
-2.  JNIEnv线程相关性： 每个线程中都有一个 JNIEnv 指针。JNIEnv只在其所在线程有效, 它不能在线程之间进行传递。
+1. JNIEnv概念 : JNIEnv是一个线程相关的结构体, 该结构体代表了 Java 在本线程的运行环境。通过JNIEnv可以调用到一系列JNI系统函数。
+2. JNIEnv线程相关性： 每个线程中都有一个 JNIEnv 指针。JNIEnv只在其所在线程有效, 它不能在线程之间进行传递。
 
 > 注意：在C++创建的子线程中获取JNIEnv，要通过调用JavaVM的AttachCurrentThread函数获得。在子线程退出时，要调用JavaVM的DetachCurrentThread函数来释放对应的资源，否则会出错。
 
@@ -120,28 +120,28 @@ JNI常用的数据类型及对应字符对照表:
 
 > CMake 则是一个跨平台的编译工具，它并不会直接编译出对象，而是根据自定义的语言规则（CMakeLists.txt）生成 对应 makefile 或 project 文件，然后再调用底层的编译， 在Android Studio 2.2 之后支持Cmake编译。
 
-*   add\_library 指令\
-    语法：add\_library(libname \[SHARED | STATIC | MODULE] \[EXCLUDE\_FROM\_ALL] \[source])\
-    将一组源文件 source 编译出一个库文件，并保存为 libname.so (lib 前缀是生成文件时 CMake自动添加上去的)。其中有三种库文件类型，不写的话，默认为 STATIC;
+* add\_library 指令\
+  语法：add\_library(libname \[SHARED | STATIC | MODULE] \[EXCLUDE\_FROM\_ALL] \[source])\
+  将一组源文件 source 编译出一个库文件，并保存为 libname.so (lib 前缀是生成文件时 CMake自动添加上去的)。其中有三种库文件类型，不写的话，默认为 STATIC;
 
-    *   SHARED: 表示动态库，可以在(Java)代码中使用 System.loadLibrary(name) 动态调用；
-    *   STATIC: 表示静态库，集成到代码中会在编译时调用；
-    *   MODULE: 只有在使用 dyId 的系统有效，如果不支持 dyId，则被当作 SHARED 对待；
-    *   EXCLUDE\_FROM\_ALL: 表示这个库不被默认构建，除非其他组件依赖或手工构建;
+    * SHARED: 表示动态库，可以在(Java)代码中使用 System.loadLibrary(name) 动态调用；
+    * STATIC: 表示静态库，集成到代码中会在编译时调用；
+    * MODULE: 只有在使用 dyId 的系统有效，如果不支持 dyId，则被当作 SHARED 对待；
+    * EXCLUDE\_FROM\_ALL: 表示这个库不被默认构建，除非其他组件依赖或手工构建;
 
 <!---->
 
     #将compress.c 编译成 libcompress.so 的共享库
     add_library(compress SHARED compress.c)
 
-*   target\_link\_libraries 指令 **语法：target\_link\_libraries(target library \<debug | optimized> library2…)**  这个指令可以用来为 target 添加需要的链接的共享库，同样也可以用于为自己编写的共享库添加共享库链接。如：
+* target\_link\_libraries 指令**语法：target\_link\_libraries(target library \<debug | optimized> library2…)**这个指令可以用来为 target 添加需要的链接的共享库，同样也可以用于为自己编写的共享库添加共享库链接。如：
 
 <!---->
 
     #指定 compress 工程需要用到 libjpeg 库和 log 库
     target_link_libraries(compress libjpeg ${log-lib})
 
-*   find\_library 指令 **语法：find\_library(<VAR> name1 path1 path2 ...)**  VAR 变量表示找到的库全路径，包含库文件名 。例如：
+* find\_library 指令**语法：find\_library(<VAR> name1 path1 path2 ...)**VAR 变量表示找到的库全路径，包含库文件名 。例如：
 
 <!---->
 
@@ -324,7 +324,6 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 }
 ```
 
-
 ## 作者开源全动态插件化框架WXDynamicPlugin介绍文章：
 
 #### [(一) 插件化框架开发背景：零反射，零HooK,全动态化，插件化框架，全网唯一结合启动优化的插件化架构](https://juejin.cn/post/7347994218235363382)
@@ -351,6 +350,16 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 
 #### [(十二) Compose的全动态插件化框架支持了，已更新到AGP 8.6,Kotlin2.0.20,支持Compose](https://juejin.cn/post/7435587382345482303)
 
+## 作者开源 Compose可视化图表库
+
+#### [(一)Compose曲线图表库WXChart，你只需要提供数据配置就行了](https://juejin.cn/post/7438835112790605865 "https://juejin.cn/post/7438835112790605865")\
+
+#### [(二)Compose折线图，贝赛尔曲线图，柱状图，圆饼图，圆环图。带动画和点击效果](https://juejin.cn/post/7442228138501259283 "https://juejin.cn/post/7442228138501259283")\
+
+#### [(三)全网最火视频，Compose代码写出来，动态可视化趋势视频，帅到爆](https://juejin.cn/post/7449238845214244875 "https://juejin.cn/post/7449238845214244875")\
+
+#### [(四)全网最火可视化趋势视频实现深度解析，同时新增条形图表](https://juejin.cn/post/7449910229573943350)
+
 ## 本人其他开源文章：
 
 #### [那些大厂架构师是怎样封装网络请求的？](https://juejin.cn/post/7435904232597372940)
@@ -360,6 +369,14 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 #### [花式封装：Kotlin+协程+Flow+Retrofit+OkHttp +Repository，倾囊相授,彻底减少模版代码进阶之路](https://juejin.cn/post/7417847546323042345)
 
 #### [注解处理器在架构，框架中实战应用：MVVM中数据源提供Repository类的自动生成](https://juejin.cn/post/7392258195089162290)
+
+#### [Android串口，USB，打印机，扫码枪，支付盒子，键盘，鼠标，U盘等开发使用一网打尽](https://juejin.cn/post/7439231301869305910)
+
+#### [多台Android设备局域网下的数据备份如何实现？](https://juejin.cn/post/7444378661934055464)
+
+#### [轻松搞定Android蓝牙打印机，双屏异显及副屏分辨率适配解决办法](https://juejin.cn/post/7446820939943428107)
+
+#### [一个Kotlin版Demo带你入门JNI,NDK编程](https://juejin.cn/post/7452181029996380171)
 
 #### 感谢阅读，欢迎给给个星，你们的支持是我开源的动力
 
