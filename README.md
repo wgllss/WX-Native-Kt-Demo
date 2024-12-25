@@ -324,24 +324,6 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 }
 ```
 
-## 总结
-
-本文简单介绍了NDK编程中JNI的基础：并写了相关示例Demo代码
-
-1.  JNI方法注册（静态注册，动态注册）
-2.  JNI的基础数据类型
-3.  JNI引用数据类型
-4.  JNI函数签名信息
-5.  JNIEnv的介绍
-6.  JNI编译之Cmake
-7.  示例：获取JNI返回字符串(静态注册)
-8.  示例：调用JNI,JNI调用Java层无返回值方法(静态注册)
-9.  示例：调用JNI,JNI调用Java层无返回值方法(带参数)(静态注册)
-10. 示例：调用JNI去调用java方法(静态注册)
-11. 示例：调用JNI去调用java 变量值(静态注册)
-12. 示例：去调用JNI去调用Java带callback方法，带参数(静态注册)
-13. 示例：动态注册
-
 
 ## 作者开源全动态插件化框架WXDynamicPlugin介绍文章：
 
