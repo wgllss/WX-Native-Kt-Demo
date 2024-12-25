@@ -342,13 +342,51 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 12. 示例：去调用JNI去调用Java带callback方法，带参数(静态注册)
 13. 示例：动态注册
 
-## 感谢阅读：
 
-#### 欢迎用你发财的小手： 点点赞、收藏收藏，或者 关注关注
+## 作者开源全动态插件化框架WXDynamicPlugin介绍文章：
 
-#### 这里你会学到不一样的东西
+#### [(一) 插件化框架开发背景：零反射，零HooK,全动态化，插件化框架，全网唯一结合启动优化的插件化架构](https://juejin.cn/post/7347994218235363382)
 
-#### 项目地址
+#### [(二）插件化框架主要介绍：零反射，零HooK,全动态化，插件化框架，全网唯一结合启动优化的插件化架构](https://juejin.cn/post/7367676494976532490)
 
-[Gitee地址](https://gitee.com/wgllss888/WX-Native-Kt-Demo)\
-[Github地址](https://github.com/wgllss/WX-Native-Kt-Demo)
+#### [(三）插件化框架内部详细介绍: 零反射，零HooK,全动态化，插件化框架，全网唯一结合启动优化的插件化架构](https://juejin.cn/post/7368397264026370083)
+
+#### [(四）插件化框架接入详细指南：零反射，零HooK,全动态化，插件化框架，全网唯一结合启动优化的插件化架构](https://juejin.cn/post/7372393698230550565)
+
+#### [(五) 大型项目架构：全动态插件化+模块化+Kotlin+协程+Flow+Retrofit+JetPack+MVVM+极限瘦身+极限启动优化+架构示例+全网唯一](https://juejin.cn/post/7381787510071934985)
+
+#### [(六) 大型项目架构：解析全动态插件化框架WXDynamicPlugin是如何做到全动态化的？](https://juejin.cn/post/7388891131037777929)
+
+#### [(七) 还在不断升级发版吗？从0到1带你看懂WXDynamicPlugin全动态插件化框架？](https://juejin.cn/post/7412124636239904819)
+
+#### [(八) Compose插件化：一个Demo带你入门Compose，同时带你入门插件化开发](https://juejin.cn/post/7425434773026537483)
+
+#### [(九) 花式高阶：插件化之Dex文件的高阶用法，极少人知道的秘密 ](https://juejin.cn/spost/7428216743166771212)
+
+#### [(十) 5种常见Android的SDK开发的方式，你知道几种？ ](https://juejin.cn/post/7431088937278947391)
+
+#### [(十一) 5种WebView混合开发动态更新方式，直击痛点，有你想要的？ ](https://juejin.cn/post/7433288965942165558)
+
+#### [(十二) Compose的全动态插件化框架支持了，已更新到AGP 8.6,Kotlin2.0.20,支持Compose](https://juejin.cn/post/7435587382345482303)
+
+## 本人其他开源文章：
+
+#### [那些大厂架构师是怎样封装网络请求的？](https://juejin.cn/post/7435904232597372940)
+
+#### [Kotlin+协程+Flow+Retrofit+OkHttp这么好用，不运行安装到手机可以调试接口吗?可以自己搭建一套网络请求工具](https://juejin.cn/post/7406675078810910761)
+
+#### [花式封装：Kotlin+协程+Flow+Retrofit+OkHttp +Repository，倾囊相授,彻底减少模版代码进阶之路](https://juejin.cn/post/7417847546323042345)
+
+#### [注解处理器在架构，框架中实战应用：MVVM中数据源提供Repository类的自动生成](https://juejin.cn/post/7392258195089162290)
+
+#### 感谢阅读，欢迎给给个星，你们的支持是我开源的动力
+
+## 欢迎光临：
+
+#### **[我的掘金地址](https://juejin.cn/user/356661835082573)**
+
+#### 关于我
+
+**VX号：wgllss**  ,如果想更多交流请加我VX
+
+
