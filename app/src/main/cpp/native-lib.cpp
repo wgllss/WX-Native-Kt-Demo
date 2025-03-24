@@ -26,15 +26,18 @@ Java_com_wx_nativex_kt_demo_MainActivity_callJNI(JNIEnv *env, jobject thiz) {
     jmethodID jmethodId = env->GetMethodID(js, "toast", "(Ljava/lang/String;)V");
     env->CallVoidMethod(thiz, jmethodId, env->NewStringUTF("静态注册 无返回值方法 调用成功"));
 }
-extern "C" JNIEXPORT jstring JNICALL
+extern "C" JNIEXPORT void JNICALL
 Java_com_wx_nativex_kt_demo_MainActivity_stringFromJNIwithParameter(JNIEnv *env, jobject thiz, jstring str) {
     const char *data = env->GetStringUTFChars(str, NULL);
     LOGE("-----获取到Java 传来的数据:data %s-----", data);
     env->ReleaseStringChars(str, reinterpret_cast<const jchar *>(data));
-    const char *src = "111---";
+    const char *src = "1112---";
     const int size = sizeof(data) + sizeof(src);
-    char datares[size] = "111---";
-    return env->NewStringUTF(strcat(datares, data));
+    char datares[size] = "1112---";
+    jclass js = env->GetObjectClass(thiz);
+    jmethodID jmethodId = env->GetMethodID(js, "toast", "(Ljava/lang/String;)V");
+    env->CallVoidMethod(thiz, jmethodId, env->NewStringUTF(strcat(datares, data)));
+//    return env->NewStringUTF(strcat(datares, data));
 }
 
 extern "C"

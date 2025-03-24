@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     external fun stringFromJNI(): String
 
     external fun callJNI()
-    external fun stringFromJNIwithParameter(str: String): String
+    external fun stringFromJNIwithParameter(str: String)
 
     external fun callNativeCallJavaMethod()
     external fun callNativeCallJavaField()
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (v.id) {
             R.id.btn_get_char -> toast(stringFromJNI())
             R.id.btn_voidr -> callJNI()
-            R.id.btn_call_with_parameter -> toast(stringFromJNIwithParameter("AAAA"))
+            R.id.btn_call_with_parameter -> stringFromJNIwithParameter("AAAA")
             R.id.btn_call_native_javar -> callNativeCallJavaMethod()
             R.id.btn_call_native_java_field -> {
                 callNativeCallJavaField()
